@@ -1,0 +1,259 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mobileWidth: 375px;
+  --desktopWidth: 1440px;
+
+  /* PRIMARY COLOR */
+  --strongCyan: hsl(172, 67%, 45%);
+  /* NEUTRAL */
+  --darkCyan: hsl(183, 100%, 15%);
+  --grayishCyan-1: hsl(186, 14%, 43%);
+  --grayishCyan-2: hsl(184, 14%, 56%);
+  --lightCyan-1: hsl(185, 41%, 84%);
+  --lightCyan-2: hsl(189, 41%, 97%);
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  font-family: "Space Mono", monospace;
+}
+
+section {
+  background-color: var(--lightCyan-1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--mobileWidth);
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  background-color: #fff;
+}
+
+.logo {
+  width: 25%;
+  margin: 0 auto;
+  padding: 2.2rem 0;
+}
+
+.calc {
+  background-color: #fff;
+  padding: 2rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+.tip-div,
+.tip-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-div h3 {
+  margin-bottom: 0.5em;
+}
+
+input {
+  width: 100%;
+  border: unset;
+  padding: 0.6rem;
+  font-weight: bold;
+  color: black;
+  text-align: right;
+  font-size: 1.3rem;
+}
+
+#bill-input {
+  background: var(--lightCyan-2) url("./images/icon-dollar.svg") 0.6rem
+    no-repeat;
+  outline: none;
+}
+
+.people-num h3 {
+  margin-bottom: 0.75em;
+}
+
+#people-num {
+  background: var(--lightCyan-2) url("./images/icon-person.svg") 0.6rem
+    no-repeat;
+  outline: none;
+}
+
+.select-tip {
+  margin: 2rem 0;
+}
+
+.select-tip h3 {
+  margin-bottom: 0.85em;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.buttons button {
+  padding: 0.5rem 1rem;
+  background-color: var(--darkCyan);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  letter-spacing: 1px;
+  border-radius: 0.4rem;
+  border: none;
+}
+
+.buttons button:hover {
+  background-color: var(--strongCyan);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.buttons .custom {
+  background-color: var(--lightCyan-2);
+  border-radius: 0.4rem;
+  color: black;
+  outline: unset;
+  border: 2px solid transparent;
+}
+
+.buttons .custom:hover,
+.buttons .custom:focus {
+  border: hsl(172, 67%, 45%) 2px solid;
+  transition: all 0.2s ease-in-out;
+}
+
+.tip-info {
+  margin: 0 1.65rem;
+  padding: 1.5rem 1.2rem 1rem;
+  background: var(--darkCyan);
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.tip-amount,
+.total-tip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.tip-amount h2,
+.tip-info h2 {
+  color: hsl(172, 67%, 45%);
+}
+
+.tip-amount .text {
+  margin-top: 1rem;
+}
+
+.text p {
+  font-size: 0.8rem;
+  color: var(--strongCyan);
+}
+
+.tip-info .reset {
+  width: 100%;
+  background-color: var(--strongCyan);
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.35rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.tip-info .reset:hover {
+  background-color: hsl(183, 100%, 20%);
+}
+
+@media (min-width: 900px) {
+  body {
+    background: var(--lightCyan-1);
+  }
+
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    width: 4%;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+  }
+
+  .calc {
+    display: flex;
+    border-radius: 1.5rem;
+    padding: 1em 0;
+  }
+
+  .tip-div {
+    justify-content: space-around;
+    padding: 0 1em;
+    margin: 0 1em;
+  }
+
+  .tip-div,
+  .tip-info {
+    flex: 1;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .tip-info {
+    padding: 2em;
+  }
+
+  .total-tip {
+    margin-top: 1.7rem;
+  }
+
+  .tip-info h2 {
+    font-size: 2.8rem;
+  }
+
+  .tip-info .reset {
+    margin-top: 30%;
+    margin-bottom: 0rem;
+    border: none;
+    border-radius: 0.35rem;
+  }
+}
